@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>화공과 전용 포켓몬 운세</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="icon" href="favicon.png" type="image/png" />
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <body>
+    <div class="container">
+      <h1>오늘의 시약 합성(운세)</h1>
+
+      <div id="setup-area">
+        <input type="text" id="user-name" placeholder="연구원 이름을 입력하세요" />
+        <button onclick="drawPokemon()" id="draw-btn">실험 시작</button>
+      </div>
+
+      <div id="result-card" class="hidden">
+        <div id="capture-area">
+          <h2 id="result-title"></h2>
+
+          <div class="img-container">
+            <img id="pokemon-img" src="" alt="Subject Image" />
+          </div>
+
+          <h3 id="pokemon-name"></h3>
+          <p id="pokemon-desc"></p>
+
+          <div class="chem-info">
+            <p>Optimized Reagent: <span id="lucky-item"></span></p>
+            <p>Chemical Analysis: <span id="chem-remark"></span></p>
+          </div>
+        </div>
+
+        <div class="save-btn-container">
+          <button class="save-btn" onclick="saveCard()">분석 보고서 저장 (.png)</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <h3>실험 기록실 (Calendar)</h3>
+      <div id="calendar-grid" class="grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+  <div id="classic-alert" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title">System Message</span>
+        <button class="modal-close-x" onclick="closeAlert()">X</button>
+      </div>
+      <div class="modal-content">
+        <p id="alert-message"></p>
+        <div class="modal-footer">
+          <button class="modal-btn" onclick="closeAlert()">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
